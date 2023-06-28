@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BounceBreaker", "BounceBreaker.csproj", "{FF4C2EB5-B4E6-43B0-8184-4921285ECBCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF4C2EB5-B4E6-43B0-8184-4921285ECBCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4C2EB5-B4E6-43B0-8184-4921285ECBCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4C2EB5-B4E6-43B0-8184-4921285ECBCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4C2EB5-B4E6-43B0-8184-4921285ECBCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {021F9412-DDC2-431A-BCBC-4605FA82961E}
+	EndGlobalSection
+EndGlobal
