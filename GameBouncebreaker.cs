@@ -11,6 +11,7 @@ namespace BounceBreaker
         private SpriteBatch _spriteBatch;
         Scenemenu MaSceneMenu;
         SceneGameplay MaSceneGameplay;
+        SceneGameover MaSceneGameover;
         Scene CurrentGameState;
 
 
@@ -34,6 +35,8 @@ namespace BounceBreaker
 
             MaSceneMenu = new Scenemenu(this);
             MaSceneGameplay = new SceneGameplay(this);
+            MaSceneGameover = new SceneGameover(this);
+
 
             CurrentGameState = MaSceneMenu;
             // TODO: use this.Content to load your game content here
@@ -48,8 +51,11 @@ namespace BounceBreaker
             {
                 CurrentGameState = MaSceneGameplay;
             }
-
-            CurrentGameState.Update();
+            else if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
+            {
+                CurrentGameState = MaSceneGameover;
+            }
+                CurrentGameState.Update();
 
 
             

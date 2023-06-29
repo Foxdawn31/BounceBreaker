@@ -10,18 +10,24 @@ namespace BounceBreaker
 {
     class SceneGameover : Scene
     {
+        SpriteFont FontGameover;
         public SceneGameover(Game Pgame) : base(Pgame)
         {
-
+            FontGameover = Pgame.Content.Load<SpriteFont>("PixFont");
         }
-        //test
+        
         public override void Update()
         {
 
         }
         public override void Draw(SpriteBatch pBatch)
         {
-            base.Draw(pBatch);
+             base.Draw(pBatch);
+            
+            
+        pBatch.DrawString(FontGameover, "Game over", new Vector2(1, 1), Color.FloralWhite);
+
+           
         }
     }
 }
