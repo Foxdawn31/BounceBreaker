@@ -61,6 +61,13 @@
 /processorParam:TextureFormat=Color
 /build:Pad.png
 
+#begin PixFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:PixFont.spritefont
+
 #begin Steel_Brick.png
 /importer:TextureImporter
 /processor:TextureProcessor

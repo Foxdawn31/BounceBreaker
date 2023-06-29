@@ -10,9 +10,10 @@ namespace BounceBreaker
 {
     class Scenemenu : Scene
     {
+        SpriteFont FontMenu;
         public Scenemenu (Game Pgame) : base (Pgame)
         {
-
+            FontMenu = Pgame.Content.Load<SpriteFont>("PixFont");
         }
         public override void Update()
         {
@@ -20,7 +21,9 @@ namespace BounceBreaker
         }
         public override void Draw(SpriteBatch pBatch)
         {
-            base.Draw(pBatch);  
+            base.Draw(pBatch);
+
+            pBatch.DrawString(FontMenu, "Bouncebreaker Menu", new Vector2(1, 1), Color.FloralWhite);
         }
     }
 }
