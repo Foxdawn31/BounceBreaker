@@ -8,12 +8,27 @@ namespace BounceBreaker
 {
     public static class Contexte
     {
-        static int Score;
+        public static int score { get; private set; }
         static int Lives;
+
+        public static int Score
+        {
+            get
+            {
+                return score;
+            }
+            set
+            {
+                score = value;
+                if (score > 1500)
+                    Lives++;
+
+            }
+        }
 
         static Contexte()
         {
-            Score = 0;
+            score = 0;
             Lives = 4 ;
         }
     }
