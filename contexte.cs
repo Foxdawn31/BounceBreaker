@@ -4,32 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BounceBreaker
-{
+
+
     public static class Contexte
     {
         public static int score { get; private set; }
-        static int Lives;
 
-        public static int Score
+        public static int lives;
+
+        public static void AddScore(int points)
         {
-            get
-            {
-                return score;
-            }
-            set
-            {
-                score = value;
-                if (score > 1500)
-                    Lives++;
-
-            }
+            score += points; 
         }
 
         static Contexte()
         {
             score = 0;
-            Lives = 4 ;
+            lives = 4 ;
         }
     }
-}
+
