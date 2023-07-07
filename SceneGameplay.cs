@@ -36,14 +36,14 @@ namespace BounceBreaker
         }
         public override void Update()
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
+           // if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            //{
             //    Pad_x = Pad_x + 3;
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Left))
-             {
+            //}
+            //else if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            // {
             //    Pad_x = Pad_x - 3;
-             }
+            //}
 
             SprPad.Update();
         }

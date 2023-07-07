@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
     class Pad : Sprites
     {
+   // ScreenWidth =
         public Pad(Texture2D pTexture) : base(pTexture) 
         {
            // SetPosition()
