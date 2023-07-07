@@ -19,7 +19,23 @@ public class Ball : Sprites
     }
     public override void Update()
     {
-       
+            if (Position.X > Screen.Width - Width)
+        {
+            SetPosition(0, Position.Y);
+        }
+
+            if (Position.X < 0)
+        {
+            SetPosition(Position.X,0);
+        }
+            if (Position.Y < 0) 
+        { 
+            SetPosition(Position.X,0);
+            Speed =new Vector2(Speed.X,-Speed.Y);
+        }
+        
+        
+        
         base.Update();
     }
 }
