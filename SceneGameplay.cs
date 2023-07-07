@@ -14,7 +14,8 @@ namespace BounceBreaker
 
         Pad SprPad;
         Ball SprBall;
-       
+        bool Stickyball;
+
 
         public SceneGameplay(Game Pgame) : base(Pgame)
         {
@@ -29,21 +30,31 @@ namespace BounceBreaker
             SprPad.SetPosition((Screen.Width/2) - (SprPad.Width/2) , Screen.Height - SprPad.Height);                      
             
             SprBall = new Ball(Pgame.Content.Load<Texture2D>("Ball"),Screen);
-            SprBall.SetPosition(SprPad.Position.X - SprBall.Width / 2, SprPad.Position.Y - SprBall.Height);
-            SprBall.Speed = new Vector2 (2, -2);
+            SprBall.SetPosition(SprPad.Position.X + SprBall.Width / 2, SprPad.Position.Y - SprBall.Height);
+            SprBall.Speed = new Vector2 (4, -4);
 
+            Stickyball = true;
         }
         public override void Update()
         {
-           // if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            //{
-            //    Pad_x = Pad_x + 3;
-            //}
-            //else if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            // {
-            //    Pad_x = Pad_x - 3;
-            //}
+            
+           
 
+            if (Stickyball == true) 
+            {
+                SprBall.SetPosition(SprPad.Position.X + SprPad.Width / 2 - SprBall.Width/2, SprPad.Position.Y - SprPad.Height);
+                
+            }
+            if (Mouse.GetState().LeftButton == ButtonState.Pressed)
+            {
+                Stickyball =false;
+            }
+            if (SprPad.BoundingBox.Intersects(SprBall.BoundingBox))
+            {
+                SprBall.Speed = new Vector2(SprBall.Speed.X,- SprBall.Speed.Y);
+            }
+
+           
             SprPad.Update();
             SprBall.Update();
         }

@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
     class Pad : Sprites
     {
+    Ball Myball;
    // ScreenWidth =
         public Pad(Texture2D pTexture, Rectangle pScreen) : base(pTexture, pScreen) 
         {
-           // SetPosition()
+      
         }
 
     public override void Update()
@@ -28,7 +29,7 @@ using System.Threading.Tasks;
         { 
            SetPosition(Screen.Width-Width, Position.Y);
         }
-
-        base.Update(); 
+        
+        base.Update();  
     }
 }

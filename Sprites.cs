@@ -10,9 +10,11 @@ using System.Threading.Tasks;
     {
        protected Rectangle Screen;
          public Vector2 Position { get; set; }
-        public Vector2 Speed { get; set; }
+    public Vector2 Speed { get; set; }
 
-        public int Height 
+    public Rectangle BoundingBox { get; private set; }
+
+    public int Height 
         {
              get
           {
@@ -47,11 +49,13 @@ using System.Threading.Tasks;
         Position = new Vector2(pX, pY);
     }
 
-    
+
     public virtual void Update()
     {
 
-        Position = new Vector2 (Position.X + Speed.X,Position.Y + Speed.Y);
+        Position = new Vector2(Position.X + Speed.X, Position.Y + Speed.Y);
+
+        BoundingBox = new Rectangle((int)Position.X, (int)Position.Y, Width, Height);
     }
 
     public virtual void Draw(SpriteBatch pBatch) 
