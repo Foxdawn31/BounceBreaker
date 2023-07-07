@@ -52,6 +52,8 @@ namespace BounceBreaker
                 CurrentGameState = MaSceneGameplay;
             }
 
+            //test scene gameover fonctionnelle
+
             // else if (Keyboard.GetState().IsKeyDown(Keys.NumPad8))
             // {
             //    CurrentGameState = MaSceneGameover;

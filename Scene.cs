@@ -10,11 +10,11 @@ using System.Threading.Tasks;
 
     public class Scene
     {
-    
+        protected Game game;
 
     public Scene(Game Pgame)
     {
-       
+       game = Pgame;
     }
 
     public virtual void Update()
