@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,4 +13,10 @@ using System.Threading.Tasks;
         {
            // SetPosition()
         }
+
+    public override void Update()
+    {
+        SetPosition(Mouse.GetState().X - (Width/2),Position.Y); 
+        base.Update(); 
     }
+}

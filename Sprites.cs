@@ -8,9 +8,24 @@ using System.Threading.Tasks;
 
     public class Sprites
     {
-    public Vector2 Position { get; set; }
-    public Vector2 Speed { get; set; }
+        public Vector2 Position { get; set; }
+        public Vector2 Speed { get; set; }
 
+        public int Height 
+        {
+             get
+          {
+            return Texture.Height;
+          }
+         }
+
+        public int Width
+        {
+            get
+            {
+            return Texture.Width;
+            } 
+        } 
     private Texture2D Texture;
 
 
@@ -25,23 +40,19 @@ using System.Threading.Tasks;
         Position = pPosition;
     }
 
-    public void SetPosition(int pX, int pY)
+    public void SetPosition(float pX, float pY)
     {
         Position = new Vector2(pX, pY);
     }
 
-    public int Height()
-    {
-        return Texture.Height; 
-    }
-
+    
     public virtual void Update()
     {
 
         Position = new Vector2 (Position.X + Speed.X,Position.Y + Speed.Y);
     }
 
-        public virtual void Draw(SpriteBatch pBatch) 
+    public virtual void Draw(SpriteBatch pBatch) 
         {
             pBatch.Draw(Texture, Position,Color.White);
         }

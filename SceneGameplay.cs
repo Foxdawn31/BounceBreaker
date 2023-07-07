@@ -20,15 +20,17 @@ namespace BounceBreaker
         {
 
             Rectangle Screen = game.Window.ClientBounds;
-            SprPad.SetPosition(Screen.Width/2 ,Screen.Height - SprPad.Height());
+            
 
             Contexte.lives = 5;
 
          
             SprPad = new Pad(Pgame.Content.Load<Texture2D>("Pad"));
 
-            SprPad.SetPosition  (10, 450);
-            SprPad.Speed = new Vector2(2, -2);
+            SprPad.SetPosition((Screen.Width/2) - (SprPad.Width/2) , Screen.Height - SprPad.Height);
+            
+            
+            // SprPad.Speed = new Vector2(2, -2);
             SprBall = new Sprites(Pgame.Content.Load<Texture2D>("Ball"));
           //SprBall.Setposition 
         }
