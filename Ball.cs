@@ -11,10 +11,10 @@ using System.Threading.Tasks;
 
 public class Ball : Sprites
 {
-    Rectangle Screen;
-    public Ball(Texture2D pTexture, Rectangle pScreen) : base(pTexture)
+   
+    public Ball(Texture2D pTexture,Rectangle pScreen) : base(pTexture, pScreen)
     {
-        Screen = pScreen;
+  
 
     }
     public override void Update()

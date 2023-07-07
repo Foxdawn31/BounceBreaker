@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
     public class Sprites
     {
-        public Vector2 Position { get; set; }
+       protected Rectangle Screen;
+         public Vector2 Position { get; set; }
         public Vector2 Speed { get; set; }
 
         public int Height 
@@ -30,9 +31,10 @@ using System.Threading.Tasks;
 
 
 
-        public Sprites(Texture2D pTexture) 
+        public Sprites(Texture2D pTexture,Rectangle pScreen) 
         { 
         Texture = pTexture;
+        Screen = pScreen;
         }
 
     public void SetPosition(Vector2 pPosition)
