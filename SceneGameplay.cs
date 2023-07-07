@@ -13,7 +13,7 @@ namespace BounceBreaker
     {
 
         Pad SprPad;
-        Sprites SprBall;
+        Ball SprBall;
        
 
         public SceneGameplay(Game Pgame) : base(Pgame)
@@ -26,13 +26,12 @@ namespace BounceBreaker
 
          
             SprPad = new Pad(Pgame.Content.Load<Texture2D>("Pad"));
+            SprPad.SetPosition((Screen.Width/2) - (SprPad.Width/2) , Screen.Height - SprPad.Height);                      
+            
+            SprBall = new Ball(Pgame.Content.Load<Texture2D>("Ball"),Screen);
+            SprBall.SetPosition(SprPad.Position.X - SprBall.Width / 2, SprPad.Position.Y - SprBall.Height);
+            SprBall.Speed = new Vector2 (2, -2);
 
-            SprPad.SetPosition((Screen.Width/2) - (SprPad.Width/2) , Screen.Height - SprPad.Height);
-            
-            
-            // SprPad.Speed = new Vector2(2, -2);
-            SprBall = new Sprites(Pgame.Content.Load<Texture2D>("Ball"));
-          //SprBall.Setposition 
         }
         public override void Update()
         {
@@ -46,6 +45,7 @@ namespace BounceBreaker
             //}
 
             SprPad.Update();
+            SprBall.Update();
         }
         public override void Draw(SpriteBatch pBatch)
         {

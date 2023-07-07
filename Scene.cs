@@ -8,13 +8,21 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 
-    public class Scene
+    public abstract class Scene
     {
-        protected Game game;
+
+    public Rectangle Screen
+    {
+        get;
+        set;
+    }
+
+    protected Game game;
 
     public Scene(Game Pgame)
     {
        game = Pgame;
+     //   Screen = game.Window.ClientBounds;
     }
 
     public virtual void Update()
