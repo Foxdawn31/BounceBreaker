@@ -31,7 +31,27 @@ using System.Threading.Tasks;
         } 
     private Texture2D Texture;
 
+    public Rectangle NextposX()
+    {
+        Rectangle nextPos = BoundingBox;
+        nextPos.Offset(new Point((int)Speed.X,0));
+        return nextPos;
+    }
 
+    public Rectangle NextposY()
+    {
+        Rectangle nextPos = BoundingBox;
+        nextPos.Offset(new Point(0, (int)Speed.Y));
+        return nextPos;
+    }
+    public void ReverseSpeedX()
+    {
+        Speed = new Vector2(-Speed.X, Speed.Y);
+    }
+    public void ReverseSpeedY()
+    {
+        Speed = new Vector2(Speed.X, -Speed.Y);
+    }
 
         public Sprites(Texture2D pTexture,Rectangle pScreen) 
         { 

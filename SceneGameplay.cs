@@ -66,9 +66,13 @@ namespace BounceBreaker
             {
                 for (int c = 0; c < Level.GetLength(1); c++)
                 {
+                  if (Level[l, c] == 1)
+                    {
                     Brick Mybrick = new Brick(TexBrick, Screen);
                     Mybrick.SetPosition((c) * TexBrick.Width, (l) * TexBrick.Height);
                     Lstbrick.Add(Mybrick);
+                    }
+                    
                 }
             }
         }
@@ -83,19 +87,34 @@ namespace BounceBreaker
 
             }
 
-            foreach (var Brick in Lstbrick)
-            {
-                Brick.Update();
-                if (Brick.BoundingBox.Intersects(SprBall.BoundingBox))
+        
+                for (int i = Lstbrick.Count - 1; i >= 0; i--)
                 {
-                    SprBall.Speed = new Vector2 (SprBall.Speed.X, -SprBall.Speed.Y);
+                    bool Collision = false;
+                    Brick Brick = Lstbrick[i];
+                    Brick.Update();
+                    if (Brick.BoundingBox.Intersects(SprBall.NextposX()))
+                    {
+                        SprBall.ReverseSpeedX();
+                        Collision = true;
+                    }
+                    if (Brick.BoundingBox.Intersects(SprBall.NextposY()))
+                    {
+                        SprBall.ReverseSpeedY();
+                        Collision = true;
+                    }
+                    if (Collision) 
+                    {
+                    Lstbrick.Remove(Brick);
+                    }
                 }
-            }
+           
 
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)
             {
                 Stickyball =false;
             }
+
 
             if (SprPad.BoundingBox.Intersects(SprBall.BoundingBox))
             {
@@ -109,8 +128,13 @@ namespace BounceBreaker
            
             SprPad.Update();
             SprBall.Update();
+            
             //SprBrick.Update();
+
+            
+
         }
+
         public override void Draw(SpriteBatch pBatch)
         {
         base.Draw(pBatch);
