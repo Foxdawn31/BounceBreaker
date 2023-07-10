@@ -86,7 +86,10 @@ namespace BounceBreaker
                 SprBall.SetPosition(SprPad.Position.X + SprPad.Width / 2 - SprBall.Width / 2, SprPad.Position.Y - SprPad.Height);
 
             }
-
+            if (SprBall.Position.Y >  SizeScreen.Height)
+            {
+                Stickyball = true;
+            }
         
                 for (int i = Lstbrick.Count - 1; i >= 0; i--)
                 {

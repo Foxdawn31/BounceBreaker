@@ -33,10 +33,13 @@ public class Ball : Sprites
             SetPosition(Position.X,0);
             Speed =new Vector2(Speed.X,-Speed.Y);
         }
-          //  if (Position.Y > 0)
-        //{
+            if (Position.Y > 0)
+        {
+         
+        }
             
-       // }
+            
+            
         
         
         base.Update();

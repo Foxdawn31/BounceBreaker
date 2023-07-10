@@ -11,18 +11,15 @@ using System.Threading.Tasks;
     public abstract class Scene
     {
 
-    public Rectangle Screen
-    {
-        get;
-        set;
-    }
+    public Rectangle SizeScreen { get; private set; }
+  
 
     protected Game game;
 
     public Scene(Game Pgame)
     {
        game = Pgame;
-     //   Screen = game.Window.ClientBounds;
+       SizeScreen = game.Window.ClientBounds;
     }
 
     public virtual void Update()
