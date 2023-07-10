@@ -1,5 +1,4 @@
-﻿using Microsoft.VisualBasic;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -20,6 +19,8 @@ namespace BounceBreaker
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
+
+            
         }
 
         protected override void Initialize()
@@ -27,6 +28,8 @@ namespace BounceBreaker
             // TODO: Add your initialization logic here
 
             base.Initialize();
+
+
         }
 
         protected override void LoadContent()
