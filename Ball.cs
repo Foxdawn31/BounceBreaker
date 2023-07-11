@@ -35,7 +35,7 @@ public class Ball : Sprites
         }
             if (Position.Y > 0)
         {
-         
+          
         }
             
             

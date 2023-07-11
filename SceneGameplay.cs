@@ -13,8 +13,9 @@ namespace BounceBreaker
     class SceneGameplay : Scene
     {
 
+        //int Score;
         Pad SprPad;
-        Brick SprBrick;
+       // Brick SprBrick;
         Ball SprBall;
         bool Stickyball;
         const int Columnumbr = 17;
@@ -106,11 +107,12 @@ namespace BounceBreaker
                         SprBall.ReverseSpeedY();
                         Collision = true;
                     }
-                    if (Collision) 
-                    {
+                    if (Collision)
+                {
                     Lstbrick.Remove(Brick);
-                    }
+                   // Score = Score + 100;
                 }
+            }
            
 
             if (Mouse.GetState().LeftButton == ButtonState.Pressed)

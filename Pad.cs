@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
     class Pad : Sprites
     {
-    Ball Myball;
+   // Ball Myball;
    // ScreenWidth =
         public Pad(Texture2D pTexture, Rectangle pScreen) : base(pTexture, pScreen) 
         {
